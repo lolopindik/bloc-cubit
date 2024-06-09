@@ -1,4 +1,4 @@
-# coin_wallet
+# Learnin Bloc%Cubit
 
 A new Flutter project.
 
