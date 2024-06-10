@@ -38,17 +38,26 @@ dependencies:
   bloc_tools: ^0.1.0-dev.6
   flutter_bloc: ^8.1.5
   ff_bloc: ^1.0.3
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  flutter_lints: ^3.0.0
+
+  flutter_launcher_icons: ^0.13.1
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "lib/assets/icon/icon.png"
+  adaptive_icon_foreground: "lib/assets/icon/icon.png"
+  adaptive_icon_background: "lib/assets/icon/icon.png"
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
