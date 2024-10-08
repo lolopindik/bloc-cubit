@@ -42,7 +42,8 @@ class _HomePageState extends State<HomePage> {
                         backgroundColor: Colors.grey,
                         radius: MediaQuery.of(context).size.height * 0.04,
                         child: IconButton(
-                         onPressed: () => BlocProvider.of<CounterBloc>(context).add(Decrement()),
+                          onPressed: () => BlocProvider.of<CounterBloc>(context)
+                              .add(Decrement()),
                           icon: const Icon(
                             Icons.remove,
                             color: Colors.black,
@@ -59,7 +60,8 @@ class _HomePageState extends State<HomePage> {
                         backgroundColor: Colors.grey,
                         radius: MediaQuery.of(context).size.height * 0.04,
                         child: IconButton(
-                          onPressed: () => BlocProvider.of<CounterBloc>(context).add(Increment()),
+                          onPressed: () => BlocProvider.of<CounterBloc>(context)
+                              .add(Increment()),
                           icon: const Icon(
                             Icons.add,
                             color: Colors.black,
