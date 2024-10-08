@@ -52,7 +52,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Flexible(
                         child: Text(
-                          state.counter.toString(),
+                          (state.counter != 0)
+                              ? state.counter.toString()
+                              : 'State Clear',
                           style: const TextStyle(fontSize: 24),
                         ),
                       ),
