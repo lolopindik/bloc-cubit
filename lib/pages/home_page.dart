@@ -44,7 +44,8 @@ class _HomePageState extends State<HomePage> {
                         child: IconButton(
                           onPressed: () => BlocProvider.of<CounterBloc>(context)
                               .add(Decrement()),
-                          icon: const Icon(
+                          icon: Icon(
+                            size: MediaQuery.of(context).size.height * 0.04,
                             Icons.remove,
                             color: Colors.black,
                           ),
@@ -53,8 +54,10 @@ class _HomePageState extends State<HomePage> {
                       Flexible(
                         child: Text(
                           (state.counter != 0)
-                              ? state.counter.toString()
-                              : 'State Clear',
+                              ? (state.counter > 0)
+                                  ? 'Positive: ${state.counter.toString()}'
+                                  : 'Negative: ${state.counter.toString()}'
+                              : 'State: Clear',
                           style: const TextStyle(fontSize: 24),
                         ),
                       ),
@@ -64,7 +67,8 @@ class _HomePageState extends State<HomePage> {
                         child: IconButton(
                           onPressed: () => BlocProvider.of<CounterBloc>(context)
                               .add(Increment()),
-                          icon: const Icon(
+                          icon: Icon(
+                            size: MediaQuery.of(context).size.height * 0.04,
                             Icons.add,
                             color: Colors.black,
                           ),
