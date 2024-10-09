@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
+  // final CounterState counterState1 = CounterState(counter: 1);
+  // final CounterState counterState2 = CounterState(counter: 1);
+  // debugPrint('${counterState1 == counterState2}');
   runApp(
     BlocProvider(
       create: (context) => CounterBloc(),
@@ -12,7 +15,7 @@ void main() {
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.blueGrey,
+            seedColor: Colors.black12,
             brightness: Brightness.dark,
           ),
         ),
