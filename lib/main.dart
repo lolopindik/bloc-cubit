@@ -1,26 +1,32 @@
-import 'package:bloc_example/bloc/bloc/counter_bloc.dart';
-import 'package:bloc_example/pages/home_page.dart';
+import 'package:bloc_example/logic/bloc/counter_bloc/counter_bloc.dart';
+import 'package:bloc_example/logic/presentation/screens/home_sceen.dart';
+import 'package:bloc_example/logic/presentation/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  // final CounterState counterState1 = CounterState(counter: 1);
-  // final CounterState counterState2 = CounterState(counter: 1);
-  // debugPrint('${counterState1 == counterState2}');
+  // ignore: no_leading_underscores_for_local_identifiers
+  final CounterBloc _counterBloc = CounterBloc();
+
   runApp(
-    BlocProvider(
-      create: (context) => CounterBloc(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.black12,
-            brightness: Brightness.dark,
-          ),
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.black12,
+          brightness: Brightness.dark,
         ),
-        home: const HomePage(),
       ),
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) =>
+            BlocProvider.value(value: _counterBloc, child: const HomeScreen()),
+        '/second': (context) => BlocProvider.value(
+              value: _counterBloc,
+              child: const SecondScreen(),
+            )
+      },
     ),
   );
 }

@@ -1,4 +1,4 @@
-import 'package:bloc_example/bloc/bloc/counter_bloc.dart';
+import 'package:bloc_example/logic/bloc/counter_bloc/counter_bloc.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

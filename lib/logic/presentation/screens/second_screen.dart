@@ -1,27 +1,23 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:bloc_example/bloc/bloc/counter_bloc.dart';
+import 'package:bloc_example/logic/bloc/counter_bloc/counter_bloc.dart';
+import 'package:bloc_example/logic/presentation/widgets/appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomePage extends StatefulWidget {
-  static const String routeName = '/home';
-
-  const HomePage({super.key});
+class SecondScreen extends StatefulWidget {
+  const SecondScreen({super.key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black87,
-        title: const Text('Counter Bloc'),
-        centerTitle: true,
-      ),
+      appBar: buildAppBar(context, 'Second Screen', false),
+      backgroundColor: Colors.blueGrey,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40),
         child: BlocConsumer<CounterBloc, CounterState>(
