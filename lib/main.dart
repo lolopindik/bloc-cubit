@@ -20,9 +20,10 @@ void main() {
       ),
       initialRoute: '/home',
       routes: {
-        '/home': (context) =>
+        //* we don't need repeat a context, we can use BlocBuilder with context and change (context) to (_)
+        '/home': (_) =>
             BlocProvider.value(value: _counterBloc, child: const HomeScreen()),
-        '/second': (context) => BlocProvider.value(
+        '/second': (_) => BlocProvider.value(
               value: _counterBloc,
               child: const SecondScreen(),
             )
