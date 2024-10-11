@@ -44,6 +44,8 @@ dependencies:
 
   matcher: ^0.12.16+1
 
+  connectivity_plus: ^6.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
