@@ -10,7 +10,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
   final InternetBloc internetBloc;
   StreamSubscription? internetStreamSubscription;
 
-  CounterBloc(this.internetBloc) : super(CounterInitial()) {
+  CounterBloc({required this.internetBloc}) : super(CounterInitial()) {
     internetStreamSubscription = internetBloc.stream.listen((internetState) {
       if (internetState is InternetConnected &&
           internetState.connectionType == ConnectionType.wifi) {

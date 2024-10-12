@@ -12,7 +12,7 @@ class InternetBloc extends Bloc<InternetEvent, InternetState> {
   final Connectivity connectivity;
   StreamSubscription? connectivityStreamSubscription;
 
-  InternetBloc(this.connectivity) : super(InternetLoading()) {
+  InternetBloc({required this.connectivity}) : super(InternetLoading()) {
     connectivityStreamSubscription =
         connectivity.onConnectivityChanged.listen((connectivityResult) {
       if (connectivityResult == ConnectivityResult.wifi) {

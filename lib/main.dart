@@ -12,9 +12,10 @@ void main() {
     MultiBlocProvider(
       providers: [
         BlocProvider<InternetBloc>(
-            create: (context) => InternetBloc(connectivity)),
+            create: (context) => InternetBloc(connectivity: connectivity)),
         BlocProvider<CounterBloc>(
-            create: (context) => CounterBloc(InternetBloc(connectivity)))
+            create: (context) => CounterBloc(
+                internetBloc: InternetBloc(connectivity: connectivity))),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
