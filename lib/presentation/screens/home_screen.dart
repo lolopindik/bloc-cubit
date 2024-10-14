@@ -2,7 +2,7 @@
 
 import 'package:bloc_example/constants/enums.dart';
 import 'package:bloc_example/logic/bloc/internet/internet_bloc.dart';
-import 'package:bloc_example/logic/presentation/widgets/appbar_widget.dart';
+import 'package:bloc_example/presentation/widgets/appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,23 +24,25 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 BlocBuilder<InternetBloc, InternetState>(
-                  builder: (context, state) {
-                    return (state is InternetConnected &&
-                            state.connectionType == ConnectionType.wifi)
-                        ? const Center(child: Text('Connected to WiFi'))
-                        : (state is InternetConnected &&
-                                state.connectionType == ConnectionType.mobile)
-                            ? const Center(child: Text('Connected to Mobile'))
-                            : (state is InternetDisconected)
-                                ? const Center(
-                                    child: Text('Connection is  lost'))
-                                : const Center(
-                                    child: CircularProgressIndicator());
-                  },
-                ),
+                    builder: (context, state) {
+                      debugPrint('actual state: $state');
+                  if (state is InternetConnected &&
+                      state.connectionType == ConnectionType.wifi) {
+                    return const Text('Connected to WiFi');
+                  } else if (state is InternetConnected &&
+                      state.connectionType == ConnectionType.mobile) {
+                    return const Text('Connected to Mobile');
+                  } else if (state is InternetDisconnected) {
+                    return const Text('Connected Lost');
+                  } else {
+                    return const CircularProgressIndicator(
+                      backgroundColor: Colors.black38,
+                    );
+                  }
+                }),
               ],
             ),
           ],

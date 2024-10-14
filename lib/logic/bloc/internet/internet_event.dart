@@ -2,10 +2,10 @@ part of 'internet_bloc.dart';
 
 abstract class InternetEvent {}
 
-class EmitInternetConnection extends InternetEvent {
+class _EmitInternetConnection extends InternetEvent {
   final ConnectionType connectionType;
 
-  EmitInternetConnection({required this.connectionType});
+  _EmitInternetConnection({required this.connectionType});
 }
 
-class EmitInternetDisconnection extends InternetEvent {}
+class _EmitInternetDisconnection extends InternetEvent {}

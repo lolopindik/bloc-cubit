@@ -1,7 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:bloc_example/logic/bloc/counter_bloc/counter_bloc.dart';
-import 'package:bloc_example/logic/presentation/widgets/appbar_widget.dart';
+import 'package:bloc_example/presentation/widgets/appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

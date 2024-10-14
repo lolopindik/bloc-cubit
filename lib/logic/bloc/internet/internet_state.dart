@@ -1,6 +1,6 @@
 part of 'internet_bloc.dart';
 
-class InternetState {}
+abstract class InternetState {}
 
 class InternetLoading extends InternetState {}
 
@@ -10,4 +10,4 @@ class InternetConnected extends InternetState {
   InternetConnected({required this.connectionType});
 }
 
-class InternetDisconected extends InternetState {}
+class InternetDisconnected extends InternetState {}
